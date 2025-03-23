@@ -187,3 +187,37 @@ node_modules/
 
 # dotenv environment variables file
 .env
+
+# Flutter/Dart specific files
+build/
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+
+# Firebase keys and configurations
+android/app/google-services.json
+ios/Runner/GoogleService-Info.plist
+lib/firebase_options.dart
+
+# IDE/editor settings
+.idea/
+.vscode/
+*.iml
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs and temporary files
+*.log
+*.lock
+pubspec.lock
+
+# Environment variables (if used)
+.env
+.env.*
+
+# Generated files
+coverage/
+generated_plugin_registrant.dart
