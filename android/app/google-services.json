@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "444021116511",
+    "project_id": "sudoku-solver-adbab",
+    "storage_bucket": "sudoku-solver-adbab.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:444021116511:android:c8da9a2dae12ec8a9e55ea",
+        "android_client_info": {
+          "package_name": "com.example.sudoku_flutter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMCVUNMqhglNPGCMB0alXpt3usBuRO-2o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
