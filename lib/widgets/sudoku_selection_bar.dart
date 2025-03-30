@@ -5,7 +5,6 @@ import 'package:sudoku_flutter/models/sudoku_board.dart';
 class SelectionBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var sudokuBoard = context.watch<SudokuBoard>();
     return Container(
       padding: EdgeInsets.symmetric(vertical: 10),
       child: Row(
