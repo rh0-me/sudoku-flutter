@@ -1,50 +1,54 @@
-import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:sudoku_flutter/models/sudoku_board.dart';
+import 'package:sudoku_flutter/screens/sudoku_screen.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => SudokuBoard(),
+      child: SudokuApp(),
+    ),
+  );
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
+class SudokuApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) => MyAppState(),
-      child: MaterialApp(
-        title: 'Namer App',
-        theme: ThemeData(
-          useMaterial3: true,
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
-        ),
-        home: MyHomePage(),
-      ),
+    return MaterialApp(
+      title: 'Sudoku Solver',
+      theme: ThemeData.light(),
+      home: HomeScreen(),
     );
   }
 }
 
-class MyAppState extends ChangeNotifier {
-  var current = WordPair.random();
-}
-
-class MyHomePage extends StatelessWidget {
+class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var appState = context.watch<MyAppState>();
-
     return Scaffold(
-      body: Column(
-        children: [
-          Text('A random idea:'),
-          Text(appState.current.asLowerCase),
-          ElevatedButton(
+      appBar: AppBar(title: Text("Sudoku Solver")),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
               onPressed: () {
-                print('Button pressed');
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SudokuScreen()));
+                // Navigate to Sudoku Game Screen
               },
-              child: Text('Next'))
-        ],
+              child: Text("Play Sudoku"),
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                // Navigate to Scan Sudoku Screen
+              },
+              child: Text("Scan Sudoku"),
+            ),
+          ],
+        ),
       ),
     );
   }
